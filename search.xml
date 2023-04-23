@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Python部署</title>
+    <url>/2023/04/23/python/Python%E9%83%A8%E7%BD%B2%E6%97%B6%E7%9A%84%E5%9D%91/</url>
+    <content><![CDATA[<h3 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h3><ul>
+<li><p>着手开发前,请先确定你将使用到框架或者第三方包,再选择对应的<code>Python</code>版本,否则<code>pip</code>会根据你的<code>Python</code>版本下载这个版本对应的包,功能上可能<strong>达不到个人预期</strong></p>
+</li>
+<li><p><code>Python</code>的项目结构较难把握,当注册路由时,很可能碰上<strong>包的循环调用</strong>,导致无法运行,可以使用<code>blueprint</code>进行<code>router</code>注册,从而避免这个问题</p>
+</li>
+<li><p><code>Python</code>版本请你<strong>提前统一</strong>,否则当你部署时可能遇到:<strong>包版本不存在或者无法使用的情况</strong></p>
+</li>
+<li><p><code>linux</code>上安装<code>Python</code>,通常是使用的源码进行编译.但往往我们只下载源码,而忽略一些实际使用中需要用到的模块,如踩坑的**<code>ssl</code> <code>sqlite3</code>**等</p>
+</li>
+<li><p>从开发环境到运行环境的过程中,需要对项目的依赖包进行整理,来避免包版本不一致或不存在而引起的问题.强烈建议别使用**<code>pip3 freeze &gt; requirements.txt</code><strong>.因为这会把你项目的依赖包下面依赖的包都导入进来,一个链式依赖,太过于细化.当从</strong><code>windows - &gt; linux</code><strong>,可能有些包(最小单元)与系统相关,就会导致</strong>install后built失败**.(参见:<code>twisted-iocpsupport</code>).使用**<code>pip-chill</code>**来导出依赖包,再去<code>pip install</code>,就能有效地避免上面的问题了.</p>
+</li>
+<li><p>一次性根据<code>requirements.txt</code>来安装包的话,当你服务器内存不足时,会报一大堆错误,最后给你扔出**<code>memory error</code>**.采用不缓冲包目录来解决</p>
+</li>
+</ul>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">pip3 install -r requirements.txt --no-cache-dir</span><br></pre></td></tr></table></figure></div>
+
+]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>部署</tag>
+      </tags>
+  </entry>
+</search>
