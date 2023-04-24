@@ -228,6 +228,10 @@
   --mermaid-theme: '';
 }
 .tag-container .tag-name {
+  font-weight: bold;
+  font-family: sans-serif, STKaiti;
+  font-style: oblique;
+  text-indent: 20px;
   color: var(--second-text-color);
   font-size: 3rem;
   font-weight: 600;

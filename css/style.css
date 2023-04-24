@@ -5560,10 +5560,15 @@ pre .deletion {
     border-radius: 10.799999999999999px;
   }
 }
+.category-list-container .category-list-content {
+  font-weight: bold;
+  font-family: sans-serif, STKaiti;
+  font-style: oblique;
+  text-indent: 20px;
+}
 .category-list-container .category-list-content .all-category-list li.all-category-list-item {
   font-size: 1.1rem;
   margin-bottom: 15px;
-  margin-left: 15px;
 }
 .category-list-container .category-list-content .all-category-list li.all-category-list-item:last-child {
   margin-bottom: 0;
@@ -5573,13 +5578,13 @@ pre .deletion {
   color: var(--default-text-color);
 }
 .category-list-container .category-list-content .all-category-list li.all-category-list-item span.all-category-list-count::before {
-  content: '[';
+  content: '~ ';
 }
 .category-list-container .category-list-content .all-category-list li.all-category-list-item span.all-category-list-count::after {
-  content: ']';
+  content: ' ~';
 }
 .category-list-container .category-list-content .all-category-list li.all-category-list-item ul.all-category-list-child {
-  margin-left: 10px;
+  margin-left: 20px;
   margin-top: 15px;
 }
 .category-list-container .category-list-content .all-category-list li.all-category-list-item ul.all-category-list-child li {
@@ -7767,7 +7772,9 @@ pre .deletion {
 .category-container .category-name {
   color: var(--second-text-color);
   font-size: 2.8rem;
-  font-weight: 600;
+  font-weight: bold;
+  font-family: sans-serif, STKaiti;
+  font-style: oblique;
   padding-bottom: 20px;
   margin-bottom: 38px;
   border-bottom: 1px solid var(--shadow-color-1);
@@ -8048,6 +8055,10 @@ pre .deletion {
   }
 }
 .tag-container .tag-name {
+  font-weight: bold;
+  font-family: sans-serif, STKaiti;
+  font-style: oblique;
+  text-indent: 20px;
   color: var(--second-text-color);
   font-size: 3rem;
   font-weight: 600;
@@ -8097,6 +8108,10 @@ pre .deletion {
   color: var(--second-text-color);
 }
 .tagcloud-container .tagcloud-content {
+  font-weight: bold;
+  font-family: sans-serif, STKaiti;
+  font-style: oblique;
+  text-indent: 20px;
   text-align: justify;
 }
 .tagcloud-container .tagcloud-content a {
