@@ -1,0 +1,273 @@
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+        name="viewport" />
+    <link rel="alternate icon" type="image/png" href="/img/favicon.png">
+    <title>
+        Life-Blog | 
+    </title>
+    
+<link rel="stylesheet" href="/css/reset.css">
+
+        
+<link rel="stylesheet" href="/css/style.css">
+
+            
+<link rel="stylesheet" href="/css/markdown.css">
+
+                
+<link rel="stylesheet" href="/css/fonts.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+    <body>
+        <div class="paper">
+            <div class="paper-main">
+                
+                    <div class="post-header">
+    <a class="logo" href="/">
+        Life-Blog
+    </a>
+    <a class="go-home" onclick="javascript:history.back()" style="cursor: pointer;">
+        <svg width="8" height="14" viewBox="0 0 8 14">
+            <path d="M7 1L1 7l6 6" stroke="#000" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="round"
+                stroke-linejoin="round" />
+        </svg>
+    </a>
+</div>
+                        
+                                    <!-- 引入代码高亮样式 -->
+
+<link rel="stylesheet" href="/css/atom-one-dark-reasonable.css">
+
+    
+<script src="/js/highlight.min.js"></script>
+
+        
+<script src="/js/code-block.js"></script>
+
+            
+<link rel="stylesheet" href="/css/code-block.css">
+
+                <div class="post-main">
+                    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+                    
+
+                        <div class="post-main-title">
+                            markdown格式
+
+                        </div>
+                        <div class="post-meta">
+                            2025-05-06
+                                <span id="busuanzi_container_page_pv" style="color: #666; margin-left: 10px;">
+                                    <svg viewBox="0 0 24 24" width="14" height="14"
+                                        style="vertical-align: -2px; fill: currentColor;">
+                                        <path
+                                            d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" />
+                                    </svg>
+                                    <span id="busuanzi_value_page_pv"></span>
+                                </span>
+                        </div>
+                        <div class="post-md">
+                            <h1>Markdown 样式测试文档</h1>
+<h2 id="1-文本样式">1. 文本样式</h2>
+<p>这是一个普通段落，包含了<strong>粗体</strong>、<em>斜体</em>和<s>删除线</s>文本。</p>
+<p>这里有一个<code>行内代码</code>示例。</p>
+<p><strong>这是</strong>一个<a href="#">链接</a>示例。</p>
+<h2 id="2-列表">2. 列表</h2>
+<h3 id="无序列表">无序列表</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>第一项</p>
+<ul class="lvl-2">
+<li class="lvl-4">子项 A</li>
+<li class="lvl-4">子项 B
+<ul class="lvl-4">
+<li class="lvl-6">更深层子项</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="lvl-2">
+<p>第二项</p>
+</li>
+<li class="lvl-2">
+<p>第三项</p>
+</li>
+</ul>
+<h3 id="有序列表">有序列表</h3>
+<ol>
+<li class="lvl-3">
+<p>第一步</p>
+<ol>
+<li class="lvl-6">子步骤 1</li>
+<li class="lvl-6">子步骤 2</li>
+</ol>
+</li>
+<li class="lvl-3">
+<p>第二步</p>
+</li>
+<li class="lvl-3">
+<p>第三步</p>
+</li>
+</ol>
+<h3 id="任务列表">任务列表</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><input type="checkbox" id="checkbox0"><label for="checkbox0">未完成任务</label></p>
+</li>
+<li class="lvl-2">
+<p><input type="checkbox" id="checkbox1" checked="true"><label for="checkbox1">已完成任务</label></p>
+</li>
+<li class="lvl-2">
+<p><input type="checkbox" id="checkbox2"><label for="checkbox2">待办事项</label></p>
+<ul class="lvl-2">
+<li class="lvl-4"><input type="checkbox" id="checkbox3" checked="true"><label for="checkbox3">子任务 1</label></li>
+<li class="lvl-4"><input type="checkbox" id="checkbox4"><label for="checkbox4">子任务 2</label></li>
+</ul>
+</li>
+</ul>
+<h2 id="3-引用">3. 引用</h2>
+<blockquote>
+<p>这是一个简单的引用</p>
+<p>这是引用的第二行</p>
+<blockquote>
+<p>这是嵌套引用</p>
+</blockquote>
+</blockquote>
+<h2 id="4-代码块">4. 代码块</h2>
+<p>行内代码 <code>const example = &quot;hello world&quot;</code></p>
+<pre><code class="language-javascript">// 这是一个代码块
+function example() &#123;
+    const greeting = &quot;Hello, World!&quot;;
+    console.log(greeting);
+    return greeting;
+&#125;
+
+// 带有高亮的代码
+const obj = &#123;
+    name: &quot;测试&quot;,
+    age: 18,
+    sayHi() &#123;
+        console.log(`Hi, $&#123;this.name&#125;!`);
+    &#125;
+&#125;;
+</code></pre>
+<h2 id="5-表格">5. 表格</h2>
+<table>
+<thead>
+<tr>
+<th>表头1</th>
+<th>表头2</th>
+<th>表头3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>内容1</td>
+<td>内容2</td>
+<td>内容3</td>
+</tr>
+<tr>
+<td>行2列1</td>
+<td>行2列2</td>
+<td>行2列3</td>
+</tr>
+<tr>
+<td>行3列1</td>
+<td>行3列2</td>
+<td>行3列3</td>
+</tr>
+</tbody>
+</table>
+<h2 id="6-图片">6. 图片</h2>
+<p>头像</p>
+<img src="/2025/05/06/markdown%E6%A0%BC%E5%BC%8F/avatar.jpg" class="" title="头像">
+<p>网图<br>
+<img src="https://picsum.photos/600/300" alt="示例图片"></p>
+<h2 id="7-水平线">7. 水平线</h2>
+<p>上面的内容</p>
+<hr>
+<p>下面的内容</p>
+<h2 id="8-提示框">8. 提示框</h2>
+<div class="tips">
+<p>这是一个提示信息</p>
+</div>
+<div class="success">
+<p>这是一个成功信息</p>
+</div>
+<div class="warning">
+<p>这是一个警告信息</p>
+</div>
+<div class="danger">
+<p>这是一个危险信息</p>
+</div>
+<h2 id="9-键盘按键">9. 键盘按键</h2>
+<p>使用 <kbd>Ctrl</kbd> + <kbd>C</kbd> 复制文本</p>
+<h2 id="10-脚注">10. 脚注</h2>
+<p>这里有一个脚注示例<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>。</p>
+<p>这是另一个脚注<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>。</p>
+<h2 id="11-数学公式">11. 数学公式</h2>
+<p>行内公式：$E = mc^2$</p>
+<p>独立公式：<br>
+$$<br>
+\frac{n!}{k!(n-k)!} = \binom{n}{k}<br>
+$$</p>
+<h2 id="12-HTML-元素">12. HTML 元素</h2>
+<div style="padding: 15px; border: 1px solid #ccc; border-radius: 4px;">
+  这是一个使用 HTML 的 div 元素
+</div>
+<details>
+<summary>点击展开详情</summary>
+这里是详细内容，默认是隐藏的。
+</details>
+<h2 id="13-上标和下标">13. 上标和下标</h2>
+<p>水分子：H<sub>2</sub>O</p>
+<p>平方：x<sup>2</sup></p>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>这是第一个脚注的内容。 <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>这是第二个脚注的内容，可以包含多行文本。 <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+
+                        </div>
+
+                        
+                            <script>
+                                window.MathJax = {
+                                    tex: {
+                                        inlineMath: [['$', '$'], ['\\(', '\\)']],
+                                        processEscapes: true,
+                                        tags: 'ams'
+                                    },
+                                    svg: {
+                                        fontCache: 'global'
+                                    }
+                                };
+                            </script>
+                            <script id="MathJax-script" async
+                                src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+                            
+
+                                
+
+                </div>
+
+                <script>
+                    document.addEventListener('DOMContentLoaded', function () {
+                        // 手动应用代码高亮
+                        document.querySelectorAll('pre code').forEach(function (block) {
+                            hljs.highlightElement(block);
+                        });
+                    });
+                </script>
+                                        <div class="footer">
+    <span>Copyright © 2025 One Paper</span>
+    <span>Owner <a target="_blank" href="https://github.com/jackj-ohn1">jackj-ohn1</a></span>
+</div>
+            </div>
+        </div>
+    </body>
