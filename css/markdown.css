@@ -1,0 +1,375 @@
+@charset "utf-8";
+
+.post-md {
+    width: 100%;
+    font-size: 18px;
+    letter-spacing: 0;
+}
+
+.post-md h1,
+.post-md h2,
+.post-md h3,
+.post-md h4,
+.post-md h5,
+.post-md h6 {
+    color: var(--font-color-1);
+    margin: 12px 0;
+}
+
+.post-md h1 {
+    font-size: 2.8rem;
+    line-height: 1.3;
+    padding: 24px 0;
+}
+
+.post-md h2 {
+    font-size: 2.3rem;
+    line-height: 1.3;
+    padding: 20px 0;
+}
+
+.post-md h3 {
+    font-size: 2.0rem;
+    line-height: 1.3;
+    padding: 18px 0;
+}
+
+.post-md h4 {
+    font-size: 1.7rem;
+    line-height: 1.3;
+    padding: 16px 0;
+}
+
+.post-md h5 {
+    font-size: 1.4rem;
+    line-height: 1.3;
+    padding: 14px 0;
+}
+
+.post-md h6 {
+    font-size: 1.2rem;
+    line-height: 1.3;
+    padding: 12px 0;
+}
+
+.post-md a {
+    color: var(--font-color-2);
+    box-shadow: 0 2px 0 var(--line-1);
+    transition: color ease-in-out .65s, box-shadow ease-in-out .65s;
+}
+
+.post-md a:hover {
+    color: var(--font-color-0);
+    box-shadow: 0 2px 0 var(--font-color-0);
+    transition: color ease-in-out .65s, box-shadow ease-in-out .65s;
+}
+
+.post-md strong {
+    font-weight: 700;
+}
+
+.post-md em {
+    font-style: italic;
+}
+
+.post-md kbd {
+    display: inline-block;
+    padding: 3px 5px;
+    font: 13px ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+    line-height: 12px;
+    color: var(--font-color-1);
+    vertical-align: middle;
+    background-color: #f7f7f7;
+    border: solid 1px #d1d5da;
+    border-bottom-color: #c6cbd1;
+    border-radius: 3px;
+    box-shadow: inset 0 -1px 0 #c6cbd1;
+}
+
+.post-md ol {
+    list-style: decimal;
+    padding-left: 24px;
+}
+
+.post-md ul {
+    list-style: disc;
+    padding-left: 24px;
+}
+
+.post-md img {
+    border-radius: 4px;
+    max-width: 100%;
+    height: auto;
+    margin: 12px auto;
+    display: block;
+}
+
+.post-md hr {
+    border: none;
+    height: 1px;
+    background: var(--line-1);
+    margin: 24px 0;
+}
+
+.post-md p,
+.post-md blockquote {
+    width: 100%;
+    margin: 12px 0;
+}
+
+.post-md blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 16px;
+    color: #6a737d;
+    background-color: transparent;
+    margin: 16px 0;
+    font-size: 1.05em;
+}
+
+.post-md blockquote p {
+    margin: 8px 0;
+    color: #6a737d;
+}
+
+.post-md .video-container {
+    background: #000;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.post-md iframe,
+.post-md .video-container iframe {
+    width: 100%;
+    height: 100vh;
+    max-height: 360px;
+    margin: 12px 0;
+}
+
+.post-md>table {
+    width: 100%;
+    text-align: left;
+    border-spacing: 0;
+}
+
+.post-md>table th {
+    padding: 12px 0;
+    border-bottom: 2px solid var(--line-1);
+}
+
+.post-md>table tr:nth-child(odd) td {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--line-1);
+    background: #fafafa;
+}
+
+.post-md>table tr:nth-child(even) td {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--line-1);
+    background: #fff;
+}
+
+.post-md code:not(pre code) {
+    border-radius: 6px;
+    background: #f0f0f0;
+    padding: 2px 6px;
+    color: #c7254e;
+    font-size: 1rem;
+    font-family: "Montserrat", "SF UI Text", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Segoe UI", "Helvetica Neue", Helvetica, sans-serif;
+    border: 1px solid #e0e0e0;
+}
+
+.post-md pre {
+    margin: 16px 0;
+    padding: 16px;
+    background: #f0f0f0;
+    border-radius: 8px;
+    overflow-x: auto;
+    border: 1px solid #e0e0e0;
+}
+
+.post-md pre code {
+    font-family: Consolas, Monaco, 'Andale Mono', monospace;
+    background: none;
+    padding: 0;
+    border-radius: 0;
+    color: #333;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.post-md .hljs-ln-numbers {
+    opacity: .5;
+    padding-right: 12px;
+}
+
+.tips {
+    padding-left: 10px;
+    background-color: rgba(52, 152, 219, .3);
+    border-left: 4px solid rgb(52, 152, 219);
+    color: darken(rgb(52, 152, 219), 20%);
+}
+
+.success {
+    padding-left: 10px;
+    background-color: rgba(46, 204, 113, .3);
+    border-left: 4px solid rgb(46, 204, 113);
+    color: darken(rgb(46, 204, 113), 20%);
+}
+
+.warning {
+    padding-left: 10px;
+    background-color: rgba(241, 196, 15, .3);
+    border-left: 4px solid rgb(241, 196, 15);
+    color: darken(rgb(241, 196, 15), 20%);
+}
+
+.danger {
+    padding-left: 10px;
+    background-color: rgba(231, 76, 60, .3);
+    border-left: 4px solid rgb(231, 76, 60);
+    color: darken(rgb(231, 76, 60), 20%);
+}
+
+.post-md .task-list-item {
+    list-style-type: none;
+    margin-left: -24px;
+}
+
+.post-md .task-list-item input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+.post-md .footnotes {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line-1);
+    font-size: 0.9em;
+}
+
+.post-md .toc {
+    margin: 20px 0;
+    padding: 12px;
+    border-left: 2px solid var(--line-2);
+}
+
+.post-md .toc ul {
+    list-style-type: none;
+    padding-left: 12px;
+}
+
+.post-md ul ul,
+.post-md ul ol,
+.post-md ol ul,
+.post-md ol ol {
+    margin: 8px 0;
+}
+
+.post-md .headerlink {
+    opacity: 0;
+    margin-right: 8px;
+    transition: opacity 0.2s ease;
+}
+
+.post-md h1:hover .headerlink,
+.post-md h2:hover .headerlink,
+.post-md h3:hover .headerlink,
+.post-md h4:hover .headerlink,
+.post-md h5:hover .headerlink,
+.post-md h6:hover .headerlink {
+    opacity: 1;
+}
+
+.post-md p {
+    line-height: 1.8;
+}
+
+.post-md li {
+    line-height: 1.8;
+}
+
+/* 提示框样式 - 信息提示 */
+.post-md .info,
+.post-md .tips {
+    margin: 16px 0;
+    padding: 16px;
+    border-radius: 6px;
+    background-color: rgba(52, 152, 219, 0.1);
+    border-left: 4px solid #3498db;
+    position: relative;
+}
+
+.post-md .info::before,
+.post-md .tips::before {
+    content: "ℹ️ Tip";
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #3498db;
+    font-size: 1.1em;
+}
+
+/* 警告提示 */
+.post-md .warning {
+    margin: 16px 0;
+    padding: 16px;
+    border-radius: 6px;
+    background-color: rgba(241, 196, 15, 0.1);
+    border-left: 4px solid #f1c40f;
+    position: relative;
+}
+
+.post-md .warning::before {
+    content: "⚠️ Warning";
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #f39c12;
+    font-size: 1.1em;
+}
+
+/* 成功提示 */
+.post-md .success {
+    margin: 16px 0;
+    padding: 16px;
+    border-radius: 6px;
+    background-color: rgba(46, 204, 113, 0.1);
+    border-left: 4px solid #2ecc71;
+    position: relative;
+}
+
+.post-md .success::before {
+    content: "✅ Success";
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #2ecc71;
+    font-size: 1.1em;
+}
+
+/* 危险提示 */
+.post-md .danger {
+    margin: 16px 0;
+    padding: 16px;
+    border-radius: 6px;
+    background-color: rgba(231, 76, 60, 0.1);
+    border-left: 4px solid #e74c3c;
+    position: relative;
+}
+
+.post-md .danger::before {
+    content: "❌ Danger";
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #e74c3c;
+    font-size: 1.1em;
+}
+
+/* 提示框内的第一个标题可以隐藏，因为已经有自动生成的标题 */
+.post-md .info strong:first-child,
+.post-md .warning strong:first-child,
+.post-md .success strong:first-child,
+.post-md .danger strong:first-child,
+.post-md .tips strong:first-child {
+    display: none;
+}

@@ -1,0 +1,76 @@
+.code-block-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 16px;
+    background: #F0F0F0;
+    border-radius: 6px 6px 0 0;
+    font-size: 0.9em;
+    color: #abb2bf;
+    box-shadow: 0 4px 3px -2px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.code-block-header .language {
+    font-family: "Montserrat", "SF UI Text", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Segoe UI", "Helvetica Neue", Helvetica, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    text-transform: lowercase;
+    margin-left: 24px;
+}
+
+.code-block-header .copy-button {
+    background: transparent;
+    border: none;
+    color: #abb2bf;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8em;
+    transition: all 0.2s ease;
+}
+
+.code-block-header .collapse-button {
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    color: #abb2bf;
+    padding: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.code-block-header .collapse-icon {
+    transition: transform 0.3s ease;
+}
+
+.code-block-header .copy-button:hover,
+.code-block-header .collapse-button:hover {
+    color: #4b5263;
+}
+
+.code-block-header .copy-button.copied {
+    background: #98c379;
+    border-color: #98c379;
+    color: #fff;
+}
+
+.code-content {
+    transition: all 0.3s ease;
+}
+
+pre {
+    margin-top: 0 !important;
+    border-radius: 0 0 6px 6px;
+    overflow: hidden;
+}
+
+pre code {
+    display: block;
+    padding: 16px;
+    overflow-x: auto;
+}

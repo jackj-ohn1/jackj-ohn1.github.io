@@ -1,0 +1,117 @@
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+        name="viewport" />
+    <link rel="alternate icon" type="image/png" href="/img/favicon.png">
+    <title>
+        Life-Blog | 
+    </title>
+    
+<link rel="stylesheet" href="/css/reset.css">
+
+        
+<link rel="stylesheet" href="/css/style.css">
+
+            
+<link rel="stylesheet" href="/css/markdown.css">
+
+                
+<link rel="stylesheet" href="/css/fonts.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+    <body>
+        <div class="paper">
+            <div class="paper-main">
+                
+                    <div class="post-header">
+    <a class="logo" href="/">
+        Life-Blog
+    </a>
+    <a class="go-home" onclick="javascript:history.back()" style="cursor: pointer;">
+        <svg width="8" height="14" viewBox="0 0 8 14">
+            <path d="M7 1L1 7l6 6" stroke="#000" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="round"
+                stroke-linejoin="round" />
+        </svg>
+    </a>
+</div>
+                        
+                                    <!-- 引入代码高亮样式 -->
+
+<link rel="stylesheet" href="/css/atom-one-dark-reasonable.css">
+
+    
+<script src="/js/highlight.min.js"></script>
+
+        
+<script src="/js/code-block.js"></script>
+
+            
+<link rel="stylesheet" href="/css/code-block.css">
+
+                <div class="post-main">
+                    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+                    
+
+                        <div class="post-main-title">
+                            一文了解蓝绿部署，滚动部署，金丝雀发布，灰度发布
+
+                        </div>
+                        <div class="post-meta">
+                            2025-05-18
+                                <span id="busuanzi_container_page_pv" style="color: #666; margin-left: 10px;">
+                                    <svg viewBox="0 0 24 24" width="14" height="14"
+                                        style="vertical-align: -2px; fill: currentColor;">
+                                        <path
+                                            d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" />
+                                    </svg>
+                                    <span id="busuanzi_value_page_pv"></span>
+                                </span>
+                        </div>
+                        <div class="post-md">
+                            <h1>一文了解蓝绿部署，滚动部署，金丝雀发布，灰度发布</h1>
+<h2 id="蓝绿部署">蓝绿部署</h2>
+<p>蓝绿部署中，一共有两个版本的系统：一个旧版本，正在对外提供服务，标记为蓝色；另一个是即将发布的新版本，标记为绿色。它们都是功能完善的，正在运行的系统，只是版本以及对外服务状态不同。</p>
+<img src="/2025/05/18/%E4%BA%86%E8%A7%A3%E5%87%A0%E4%B8%AA%E8%BF%90%E7%BB%B4%E6%9C%AF%E8%AF%AD/overall-architecture.png" class="" title="架构图">
+<p>新系统部署后，会对其进行一系列的测试，通过测试后，再将用户流量路由到新系统，新系统对外提供服务。如果在新系统对外提供服务时，线上发生了故障，可以立即将流量路由到旧系统。当确保对外提供服务的新系统工作正常后，可以将原先的旧系统删除，释放资源，用于部署下一个新系统。</p>
+<img src="/2025/05/18/%E4%BA%86%E8%A7%A3%E5%87%A0%E4%B8%AA%E8%BF%90%E7%BB%B4%E6%9C%AF%E8%AF%AD/version-lifetime.png" class="" title="时序图">
+<ul class="lvl-0">
+<li class="lvl-2">优点<br>
+1.快速回滚：始终有两个版本的系统在线，线上系统出现故障后，可以即使切换。<br>
+2.无缝更新：新旧版本的更新只需要通过控制流量的流向即可（适用于性能要求高，无法容忍短时间停机的系统，如银行，支付，电商等）。<br>
+3.环境隔离：新旧版本部署在不同的环境中，二者互不影响，新系统的故障不会影响旧系统的稳定性。</li>
+<li class="lvl-2">缺点。<br>
+1.成本增加：两个系统需要部署在两个不同的环境中，导致资源需要double。<br>
+2.数据同步：两个环境中的数据是分开存储的，当进行切换时，可能出现数据丢失或不一致的情况。</li>
+</ul>
+<h2 id="滚动部署">滚动部署</h2>
+<p>滚动部署是一种逐步更新服务器上的应用版本的部署策略。在这种策略中，开发团队会将服务器集群分成若干个小批次，<strong>每次只更新其中一个小批次的服务器</strong>，然后逐步将更新推广到整个集群。例如，一个服务器集群包含10台服务器，开发团队可以将它们分成5个批次，每次更新2台服务器。在更新过程中，开发团队会密切监控每个批次的更新情况，确保更新过程的顺利进行。如果在某个批次的更新过程中发现问题，可以暂停后续批次的更新，及时进行修复和优化。</p>
+<h2 id="灰度发布（金丝雀发布）">灰度发布（金丝雀发布）</h2>
+<p>灰度发布是一种<strong>先将新版本发布给部分用户，观察运行情况的部署策略</strong>。在这种策略中，开发团队会将用户分成若干个灰度组，每个灰度组的用户数量逐渐增加。例如，开发团队可以先将新版本发布给10%的用户，观察运行情况，如果没有问题再将新版本发布给20%的用户，以此类推，直到新版本发布给所有用户。通过这种方式，开发团队可以在新版本上线初期发现潜在问题，及时进行修复和优化，降低新版本对用户的影响。</p>
+<h2 id="A-B测试">A/B测试</h2>
+<p>蓝绿发布、滚动发布和金丝雀是发布策略，目标是确保新上线的系统稳定，关注的是新系统的BUG、隐患。</p>
+<p>A/B测试是效果测试，同一时间有多个版本的服务对外服务，这些服务都是经过足够测试，达到了上线标准的服务，有差异但是没有新旧之分（它们上线时可能采用了蓝绿部署的方式）。</p>
+<p>A/B测试关注的是不同版本的服务的实际效果，譬如说转化率、订单情况等。线上同时运行多个版本的服务，这些服务通常会有一些体验上的差异，譬如说页面样式、颜色、操作流程不同。相关人员通过分析各个版本服务的实际效果，选出效果最好的版本。</p>
+
+                        </div>
+
+                        
+
+                                
+
+                </div>
+
+                <script>
+                    document.addEventListener('DOMContentLoaded', function () {
+                        // 手动应用代码高亮
+                        document.querySelectorAll('pre code').forEach(function (block) {
+                            hljs.highlightElement(block);
+                        });
+                    });
+                </script>
+                                        <div class="footer">
+    <span>Copyright © 2025 One Paper</span>
+    <span>Owner <a target="_blank" href="https://github.com/jackj-ohn1">jackj-ohn1</a></span>
+</div>
+            </div>
+        </div>
+    </body>
